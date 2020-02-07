@@ -17,7 +17,7 @@ set (WSJCPP_INCLUDE_DIRS "")
 set (WSJCPP_SOURCES "")
 
 find_package(Threads REQUIRED)
-list (APPEND WSJCPP_SOURCES ${CMAKE_THREAD_LIBS_INIT})
+list (APPEND WSJCPP_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
 
 # wsjcpp-core:v0.0.5
 list (APPEND WSJCPP_INCLUDE_DIRS "../src.wsjcpp/wsjcpp_core/")

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(wsjcpp-print-tree)
+project(wsjcpp-print-tree C CXX)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/src.wsjcpp/CMakeLists.txt)
 
