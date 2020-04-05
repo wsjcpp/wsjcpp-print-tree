@@ -3,10 +3,10 @@
 #include <wsjcpp_core.h>
 #include <wsjcpp_print_tree.h>
 
-REGISTRY_UNIT_TEST(UnitTestTreeSimple)
+REGISTRY_WSJCPP_UNIT_TEST(UnitTestTreeSimple)
 
 UnitTestTreeSimple::UnitTestTreeSimple()
-    : WSJCppUnitTestBase("UnitTestTreeSimple") {
+    : WsjcppUnitTestBase("UnitTestTreeSimple") {
 }
 
 // ---------------------------------------------------------------------
@@ -20,7 +20,7 @@ void UnitTestTreeSimple::init() {
 bool UnitTestTreeSimple::run() {
     bool bTestSuccess = true;
 
-    WSJCppPrintTree tree("Example Of Tree");
+    WsjcppPrintTree tree("Example Of Tree");
     tree
         .addChild("Hello1")
             .switchToLatestChild()

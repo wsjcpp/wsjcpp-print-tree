@@ -7,10 +7,20 @@
 
 int main(int argc, const char* argv[]) {
     std::string TAG = "MAIN";
-    WSJCppCore::init(argc, argv, true);
+    std::string appName = std::string(WSJCPP_NAME);
+    std::string appVersion = std::string(WSJCPP_VERSION);
+    
+    std::string appLogPath = ".logs";
+    if (!WsjcppCore::dirExists(appLogPath)) {
+        WsjcppCore::makeDir(appLogPath);
+    }
+    WsjcppLog::setPrefixLogFile("wsjcpp-print-tree");
+    WsjcppLog::setLogDirectory(appLogPath);
+
+    // WsjcppCore::init(argc, argv, sAppName, sAppVersion, "Evgenii Sopov", "WsjcppPrintTree");
     
     // may be better read from file struct for example json or any some
-    WSJCppPrintTree tree("Example Of Tree");
+    WsjcppPrintTree tree("Example Of Tree");
     tree
         .addChild("Hello1")
             .switchToLatestChild()
