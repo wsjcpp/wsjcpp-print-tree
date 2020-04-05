@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(unit-tests C CXX)
-add_definitions(-DWSJCPP_VERSION="ut-v0.0.1")
+add_definitions(-DWSJCPP_VERSION="ut-v0.1.0")
 add_definitions(-DWSJCPP_NAME="unit-tests-wsjcpp-print-tree")
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
@@ -19,7 +19,7 @@ set (WSJCPP_SOURCES "")
 find_package(Threads REQUIRED)
 list (APPEND WSJCPP_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
 
-# wsjcpp-core:v0.0.5
+# wsjcpp-core:v0.1.1
 list (APPEND WSJCPP_INCLUDE_DIRS "../src.wsjcpp/wsjcpp_core/")
 list (APPEND WSJCPP_SOURCES "../src.wsjcpp/wsjcpp_core/wsjcpp_core.cpp")
 list (APPEND WSJCPP_SOURCES "../src.wsjcpp/wsjcpp_core/wsjcpp_core.h")
@@ -27,7 +27,7 @@ list (APPEND WSJCPP_SOURCES "../src.wsjcpp/wsjcpp_core/wsjcpp_unit_tests.cpp")
 list (APPEND WSJCPP_SOURCES "../src.wsjcpp/wsjcpp_core/wsjcpp_unit_tests.h")
 list (APPEND WSJCPP_SOURCES "../src.wsjcpp/wsjcpp_core/wsjcpp_unit_tests_main.cpp")
 
-# wsjcpp-print-tree:v0.0.1
+# wsjcpp-print-tree:v0.1.0
 list (APPEND WSJCPP_INCLUDE_DIRS "../src")
 list (APPEND WSJCPP_SOURCES "../src/wsjcpp_print_tree.h")
 list (APPEND WSJCPP_SOURCES "../src/wsjcpp_print_tree.cpp")
@@ -36,6 +36,8 @@ list (APPEND WSJCPP_SOURCES "../src/wsjcpp_print_tree.cpp")
 list (APPEND WSJCPP_INCLUDE_DIRS "src")
 list (APPEND WSJCPP_SOURCES "../unit-tests.wsjcpp/src/unit_test_tree_simple.h")
 list (APPEND WSJCPP_SOURCES "../unit-tests.wsjcpp/src/unit_test_tree_simple.cpp")
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.user-custom.txt)
 
 
 include_directories(${WSJCPP_INCLUDE_DIRS})
