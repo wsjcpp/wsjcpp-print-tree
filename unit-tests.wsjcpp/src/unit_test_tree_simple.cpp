@@ -11,14 +11,14 @@ UnitTestTreeSimple::UnitTestTreeSimple()
 
 // ---------------------------------------------------------------------
 
-void UnitTestTreeSimple::init() {
+bool UnitTestTreeSimple::doBeforeTest() {
     // nothing
+    return true;
 }
 
 // ---------------------------------------------------------------------
 
-bool UnitTestTreeSimple::run() {
-    bool bTestSuccess = true;
+void UnitTestTreeSimple::executeTest() {
 
     WsjcppPrintTree tree("Example Of Tree");
     tree
@@ -46,7 +46,12 @@ bool UnitTestTreeSimple::run() {
         "└─ Hello4\n"
         "   └─ Hello123\n";
 
-    compareS(bTestSuccess, "Test tree", tree.printTree(), sTreeExpected);
-    return bTestSuccess;
+    compare("Test tree", tree.printTree(), sTreeExpected);
 }
 
+// ---------------------------------------------------------------------
+
+bool UnitTestTreeSimple::doAfterTest() {
+    // nothing
+    return true;
+}
